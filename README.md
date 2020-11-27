@@ -1,1 +1,1 @@
-[GitHub Pages](https://parakeet15.github.io/experiment/web-diary.html)
+[GitHub Pages](https://parakeet15.github.io/experiment/index.html)
