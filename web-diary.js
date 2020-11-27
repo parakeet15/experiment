@@ -115,7 +115,7 @@ function addToList(key) {
         const savedItem = document.createElement('li');
         savedItem.className = 'saved-item';
         savedItem.dataset.key = key;
-        savedItem.setAttribute('onclick', 'console.log(this)');
+        savedItem.setAttribute('onclick', 'load(this)');
         savedItem.appendChild(container);
         saveList.insertBefore(savedItem, saveList.firstChild);
         load(savedItem);
