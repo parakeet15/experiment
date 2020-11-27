@@ -84,7 +84,8 @@ class Diary {
  * @param {String} key 保存するキーの名称
  */
 function save(key) {
-    if (!titleArea.value.length) titleArea.value = `Untitled`;
+    if (!titleArea.value.length)
+        titleArea.value = `Untitled`;
     const title = titleArea.value;
     const content = contentArea.innerHTML;
     const updatedAt = new Date().toLocaleString();
@@ -184,7 +185,9 @@ function output(key) {
     const diary = JSON.parse(localStorage.getItem(key));
     titleArea.value = diary.title;
     contentArea.innerHTML = diary.content;
-    writeDate.innerText = diary.updatedAt;
+    diary.createdAt === diary.updatedAt ?
+        writeDate.innerText = `Created: ${diary.createdAt}` :
+        writeDate.innerText = `Created: ${diary.createdAt}, Last Updated: ${diary.updatedAt}`;
 }
 
 /**
