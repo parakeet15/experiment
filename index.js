@@ -65,7 +65,7 @@ addFileInput.addEventListener('change', event => {
  */
 class Diary {
     /**
-     * 内容
+     * 保存内容
      * @param {string} title 題名
      * @param {string} content 本文
      * @param {string} createdAt 作成日時
@@ -187,7 +187,7 @@ function output(key) {
     contentArea.innerHTML = diary.content;
     diary.createdAt === diary.updatedAt ?
         writeDate.innerText = `Created: ${diary.createdAt}` :
-        writeDate.innerText = `Created: ${diary.createdAt}, Last Updated: ${diary.updatedAt}`;
+        writeDate.innerText = `Created: ${diary.createdAt}, Last updated: ${diary.updatedAt}`;
 }
 
 /**
