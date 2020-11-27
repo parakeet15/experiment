@@ -163,23 +163,22 @@ function output(key) {
  * @param {HTMLElement} listItem 選択した要素
  */
 function load(listItem) {
-    console.log(listItem);
-    // listStyle(listItem);
-    // listItem.scrollIntoView({ behavior: 'smooth' });
-    // const key = listItem.dataset.key;
-    // if (localStorage.getItem(key)) {
-    //     try {
-    //         output(key);
-    //     } catch (error) {
-    //         remove(key);
-    //         console.warn(`“${key}” のデータを取得できませんでした`, error);
-    //     }
-    //     saveButton.onclick = () => save(key);
-    //     deleteButton.onclick = () => remove(key);
-    // } else {
-    //     remove(key);
-    //     console.warn(`“${key}” の値を取得できません`);
-    // }
+    listStyle(listItem);
+    listItem.scrollIntoView({ behavior: 'smooth' });
+    const key = listItem.dataset.key;
+    if (localStorage.getItem(key)) {
+        try {
+            output(key);
+        } catch (error) {
+            remove(key);
+            console.warn(`“${key}” のデータを取得できませんでした`, error);
+        }
+        saveButton.onclick = () => save(key);
+        deleteButton.onclick = () => remove(key);
+    } else {
+        remove(key);
+        console.warn(`“${key}” の値を取得できません`);
+    }
 }
 
 // ページ読み込み時
