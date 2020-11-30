@@ -118,11 +118,7 @@ function addToList(key) {
         savedItem.dataset.key = key;
         savedItem.appendChild(container);
         saveList.insertBefore(savedItem, saveList.firstChild);
-        savedItem.onclick = e => {
-            load(savedItem);
-            console.log(e);
-            console.log(e.target);
-        }
+        savedItem.onclick = () => load(savedItem);
         load(savedItem);
     }
 }
