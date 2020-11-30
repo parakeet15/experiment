@@ -111,7 +111,7 @@ function addToList(key) {
         const savedItem = saveList.querySelector(`li[data-key="${key}"]`);
         removeAllChildren(savedItem);
         savedItem.appendChild(container);
-        savedItem.onclick = () => load(savedItem);
+        load(savedItem);
     } else {
         const savedItem = document.createElement('li');
         savedItem.className = 'saved-item';
@@ -119,6 +119,7 @@ function addToList(key) {
         savedItem.appendChild(container);
         saveList.insertBefore(savedItem, saveList.firstChild);
         savedItem.onclick = () => load(savedItem);
+        load(savedItem);
     }
 }
 
