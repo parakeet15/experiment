@@ -111,15 +111,14 @@ function addToList(key) {
         const savedItem = saveList.querySelector(`li[data-key="${key}"]`);
         removeAllChildren(savedItem);
         savedItem.appendChild(container);
-        load(savedItem);
+        savedItem.onclick = () => load(savedItem);
     } else {
         const savedItem = document.createElement('li');
         savedItem.className = 'saved-item';
         savedItem.dataset.key = key;
-        savedItem.setAttribute('onclick', 'load(this)');
         savedItem.appendChild(container);
         saveList.insertBefore(savedItem, saveList.firstChild);
-        load(savedItem);
+        savedItem.onclick = () => load(savedItem);
     }
 }
 
