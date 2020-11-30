@@ -1,6 +1,5 @@
 :root {
-    --bg-color: #000000;
-    /* --bg-color: linear-gradient(#080059, #920783, #EB6100); */
+    --bg-color: linear-gradient(#080059, #920783, #EB6100);
 }
 
 * {
