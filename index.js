@@ -67,7 +67,7 @@ function save(key) {
         notification(
             title,
             contentArea.textContent,
-            contentArea.getElementsByTagName('img')[0] || './images/no-image.png'
+            contentArea.getElementsByTagName('img')[0].src || './images/no-image.png'
         );
     } catch (error) {
         titleArea.value = null;
