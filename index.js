@@ -64,11 +64,6 @@ function save(key) {
     const diary = new Diary(title, content, createdAt, updatedAt);
     try {
         localStorage.setItem(key, JSON.stringify(diary));
-        notification(
-            title,
-            contentArea.textContent,
-            contentArea.getElementsByTagName('img')[0].src || './images/no-image.png'
-        );
     } catch (error) {
         titleArea.value = null;
         load(saveList.querySelector(`li[data-key="${key}"]`) || saveList.firstChild);
