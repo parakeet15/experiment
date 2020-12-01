@@ -10,6 +10,7 @@ const openRequest = indexedDB.open(dbName, 1);
 openRequest.onupgradeneeded = event => {
   const database = event.target.result;
   database.createObjectStore(storeName, { keyPath: 'id' });
+  console.info('オブジェクトストアを作成しました');
 }
 
 openRequest.onsuccess = event => {
