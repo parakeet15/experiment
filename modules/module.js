@@ -78,8 +78,10 @@ function createNotification(title, body, icon) {
  */
 function permissionNotification() {
   Notification.requestPermission().then(permission => {
+    permission === 'granted' ?
+      alert('通知を許可しました') :
+      alert('通知を許可してください');
     console.info(`Permission: ${permission}`);
-    alert('通知の表示を許可しました');
   });
 }
 
