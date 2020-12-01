@@ -1,7 +1,7 @@
 'use strict';
 
 // モジュール
-import { removeAllChildren, Diary } from './modules/module.js';
+import { notification, removeAllChildren, Diary } from './modules/module.js';
 
 // ツールバー
 const createButton = document.getElementById('create-button');
@@ -64,10 +64,15 @@ function save(key) {
     const diary = new Diary(title, content, createdAt, updatedAt);
     try {
         localStorage.setItem(key, JSON.stringify(diary));
+        notification(
+            title,
+            contentArea.textContent,
+            contentArea.getElementsByTagName('img')[0] || './images/no-image.png'
+        );
     } catch (error) {
         titleArea.value = null;
         load(saveList.querySelector(`li[data-key="${key}"]`) || saveList.firstChild);
-        alert(`“${diary.title}”を保存できませんでした。\nローカルストレージの空き領域が不足しています。`);
+        alert(`“${title}”を保存できませんでした。\nローカルストレージの空き領域が不足しています。`);
         console.warn(`ローカルストレージの空き領域が不足しています`, error);
     }
     addToList(key);
